@@ -9,4 +9,9 @@ export default class ProductController {
     const insertNewId = await this.productService.insert(name, amount);
     res.status(201).json(insertNewId);
   };
+
+  public findAll = async (_req: Request, res: Response) => {
+    const result = await this.productService.findAll();
+    res.status(200).json(result);
+  };
 }
